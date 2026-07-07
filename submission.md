@@ -135,5 +135,8 @@ Per the project guidance ("if you can't reproduce a bug after a genuine attempt,
 ---
 
 ## Git Log
+_(screenshot of git log --oneline on bugfix/mixtape to be added after all commits)_
 
-_(screenshot of `git log --oneline` on `bugfix/mixtape` to be added after all commits)_
+
+![git log](image.png)
+
