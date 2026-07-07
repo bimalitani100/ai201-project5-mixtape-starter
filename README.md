@@ -28,7 +28,8 @@ ai201-project5-mixtape-starter/
 │   ├── test_search.py
 │   └── test_playlists.py
 ├── seed_data.py                # Populates DB with test data
-└── requirements.txt
+├── requirements.txt
+└── .gitignore
 ```
 
 The bugs live in the `services/` layer. The routes call services — if something is broken in an endpoint, trace it back to the service it calls.
@@ -36,6 +37,23 @@ The bugs live in the `services/` layer. The routes call services — if somethin
 ---
 
 ## Setup
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+
+# macOS / Linux
+source .venv/bin/activate
+
+# Windows (Command Prompt)
+.venv\Scripts\activate.bat
+
+# Windows (Git Bash)
+source .venv/Scripts/activate
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -50,8 +68,10 @@ python seed_data.py
 Run the app:
 
 ```bash
-python app.py
+FLASK_APP=app:create_app flask run
 ```
+
+> **macOS note:** If the app starts but requests hang or return connection refused, try `http://127.0.0.1:5000` instead of `http://localhost:5000`. On macOS, `localhost` sometimes resolves to an IPv6 address that Flask isn't listening on.
 
 Run tests:
 
